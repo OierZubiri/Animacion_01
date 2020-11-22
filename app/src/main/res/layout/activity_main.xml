@@ -6,8 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <ImageView
-        android:id="@+id/ball_imageView"
+        android:id="@+id/BalonDearriba_imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:srcCompat="@drawable/balon"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintWidth_percent="0.2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <ImageView
+        android:id="@+id/BalonDeAbajoimageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:srcCompat="@drawable/balon"
