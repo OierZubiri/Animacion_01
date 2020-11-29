@@ -18,9 +18,11 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+	TextView o_texto;
 	ImageView o_BalonDeArriba;
 	ImageView o_BalonDeAbajo;
 	ImageView o_FormaAnimada;
@@ -36,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
 		o_VectorAnimado = findViewById(R.id.vector_animado);
 
 
+		o_texto = (TextView) findViewById(R.id.textView);
+		o_texto.setOnClickListener(this::mover_animacion);
+
 		//o_ImageView.setOnClickListener(this::mover);
 		o_BalonDeArriba.setOnClickListener(this::mover_ViewProperty);
 		o_BalonDeAbajo.setOnClickListener(this::mover_2_Elementos);
@@ -46,6 +51,12 @@ public class MainActivity extends AppCompatActivity {
 	public void mover_vectorAnimado(View v) {
 		((AnimatedVectorDrawable) o_VectorAnimado.getDrawable()).start();
 	}
+
+	public void mover_animacion(View v) {
+		Animation animacion = AnimationUtils.loadAnimation(this, R.anim.animacion_compleja);
+		o_texto.startAnimation(animacion);
+	}
+
 	public void mover_formaAnimada(View v) {
 		((AnimationDrawable) o_FormaAnimada.getDrawable()).start();
 	}
